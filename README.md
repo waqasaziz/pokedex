@@ -1,4 +1,4 @@
-# Payment Gateway
+# Pokedex Gateway
 
 This project exposes API gateway that returns pokemon information.
 
