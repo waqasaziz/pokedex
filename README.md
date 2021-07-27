@@ -3,18 +3,18 @@
 This project exposes API gateway that returns pokemon information.
 
 ## Framework and Tools
-ASP.NET Core 5.0 
-Visual Studio 2019
+- ASP.NET Core 5.0 
+- Visual Studio 2019
 
 
 ## WebAPI
-	Contains controller class and API setup 
+ Contains controller class and API setup 
 
 ## Domain
-	Contains data contracts, Services and Helper classes.
+ Contains data contracts, Services and Helper classes.
 
 ## Tests
-	Contains test cases for services and controllers. 
+ Contains test cases for services and controllers. 
 
 ## Running in Docker
   - Go to project root directory 
