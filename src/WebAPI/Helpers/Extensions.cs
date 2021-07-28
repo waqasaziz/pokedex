@@ -4,6 +4,7 @@ using Microsoft.OpenApi.Models;
 using Domain.Services;
 using Domain.ApiClients;
 using System.Net.Http;
+using PokeApiNet;
 
 namespace WebAPI.Helpers
 {
@@ -14,6 +15,7 @@ namespace WebAPI.Helpers
             services.Configure<FunTranslateAPIOptions>(config.GetSection(FunTranslateAPIOptions.FunTranslateAPI));
             services.Configure<PokeAPIOptions>(config.GetSection(PokeAPIOptions.PokeAPI));
 
+            services.AddSingleton<PokeApiClient>(); // Based on API documentation, it's valid for application lifecycle scope as it internally uses HTTP client
             services.AddSingleton<HttpClient>();
             services.AddSingleton<IPokemonAPIClient, PokeAPI>();
             services.AddSingleton<ITranslateAPIClient, FunTranslationsAPI>();

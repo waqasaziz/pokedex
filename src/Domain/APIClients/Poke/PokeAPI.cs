@@ -8,16 +8,16 @@ using Microsoft.Extensions.Options;
 namespace Domain.ApiClients
 {
 
-    public class PokeAPI : IPokemonAPIClient, IDisposable
+    public class PokeAPI : IPokemonAPIClient
     {
 
         private readonly PokeApiClient _pokeClient;
         private readonly PokeAPIOptions _options;
 
-        public PokeAPI(IOptions<PokeAPIOptions> options)
+        public PokeAPI(PokeApiClient pokeClient, IOptions<PokeAPIOptions> options)
         {
             _options = options.Value;
-            _pokeClient = new PokeApiClient();
+            _pokeClient = pokeClient;
         }
 
         public async Task<PokemonDetail> Get(string name)
@@ -39,6 +39,5 @@ namespace Domain.ApiClients
             };
         }
 
-        public void Dispose() => _pokeClient.Dispose();
     }
 }
